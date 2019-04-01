@@ -1,0 +1,23 @@
+https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-DisplayColumnStatistics
+
+#show all the partitions in hive table
+>show partitions tablename;
+  day=20190401/type=TRADE_ITEM/attname=tradeItemWeightQty
+  day=20190401/type=TRADE_ITEM/attname=tradeItemWeightUomCode
+ 
+ 
+#show file number and size for partition
+>describe formatted castar_audit_events partition (day=20190401,type='TRADE_ITEM',attname='tradeItemWeightQty');
+
+# Detailed Partition Information	 	 
+Partition Value:    	[20190401, TRADE_ITEM, tradeItemWeightQty]	 
+Database:           	svccatl             	 
+Table:              	castar_audit_events 	 
+CreateTime:         	Mon Apr 01 19:57:47 UTC 2019	 
+LastAccessTime:     	UNKNOWN             	 
+Protect Mode:       	None                	 
+Location:           	r_audit_events/day=20190401/type=TRADE_ITEM/attname=tradeItemWeightQty	 
+Partition Parameters:	 	 
+	numFiles            	1                   
+	totalSize           	3970                
+	transient_lastDdlTime	1554148666 
